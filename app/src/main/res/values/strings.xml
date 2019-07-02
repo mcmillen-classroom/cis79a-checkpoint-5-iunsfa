@@ -13,10 +13,19 @@
     <string name="question_3">Is it true that One Punch Man started out as a manga?</string>
     <string name="question_4">Can Atomic Samurai move fast enough to slash lightning?</string>
     <string name="question_5">The manga is farther ahead than the webcomic.</string>
+    <string name="question_6">What is the name of Garous friend?</string>
 
     <string name="hint_1">Watch OPM to find out!</string>
     <string name="hint_2">See the sea king episode and judge for yourself</string>
     <string name="hint_3">Who is the original author?</string>
     <string name="hint_4">Read the latest OPM manga chapter</string>
     <string name="hint_5">Compare the webcomic to the manga</string>
+    <string name="hint_6">His name sounds like the combo between tar and oreo.</string>
+    <string name="check_button">Check</string>
+
+    <string-array name="question_6_answers">
+        <item>Tareo</item>
+        <item>tareo</item>
+    </string-array>
+
 </resources>
