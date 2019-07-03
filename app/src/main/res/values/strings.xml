@@ -14,6 +14,7 @@
     <string name="question_4">Can Atomic Samurai move fast enough to slash lightning?</string>
     <string name="question_5">The manga is farther ahead than the webcomic.</string>
     <string name="question_6">What is the name of Garous friend?</string>
+    <string name="question_7">What is the King Engine?</string>
 
     <string name="hint_1">Watch OPM to find out!</string>
     <string name="hint_2">See the sea king episode and judge for yourself</string>
@@ -21,11 +22,19 @@
     <string name="hint_4">Read the latest OPM manga chapter</string>
     <string name="hint_5">Compare the webcomic to the manga</string>
     <string name="hint_6">His name sounds like the combo between tar and oreo.</string>
+    <string name="hint_7">Think about his character</string>
     <string name="check_button">Check</string>
 
     <string-array name="question_6_answers">
         <item>Tareo</item>
         <item>tareo</item>
+    </string-array>
+
+    <string-array name="question_7_answers">
+        <item>It is the immense power inside king ready to be unleashed</item>
+        <item>Its just his stomach growling out of fear</item>
+        <item>Kings special form</item>
+        <item>Kings special move</item>
     </string-array>
 
 </resources>

@@ -50,6 +50,11 @@ public class Question {
         return false;
     }
 
+    //stub
+    public boolean checkAnswer(int ans){
+        return false;
+    }
+
 
 
 }
