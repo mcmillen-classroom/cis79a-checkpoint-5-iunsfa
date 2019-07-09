@@ -2,6 +2,7 @@ package kevinhuang.quizapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -35,6 +36,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button mCButton;
     private Button mDButton;
 
+    private Button mCheatButton;
+    private boolean mCheated;
+
     private Question[] mQuestions;
     private int mIndex;
     private int mScore;
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBButton = (Button) findViewById(R.id.b_button);
         mCButton = (Button) findViewById(R.id.c_button);
         mDButton = (Button) findViewById(R.id.d_button);
+        mCheatButton = (Button) findViewById(R.id.cheat_button);
 
 
 
@@ -78,6 +83,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mBButton.setOnClickListener(this);
         mCButton.setOnClickListener(this);
         mDButton.setOnClickListener(this);
+        mCheatButton.setOnClickListener(this);
 
         mTextView = (TextView) findViewById(R.id.text_view);
         mScoreTextView = (TextView) findViewById(R.id.score_text_view);
@@ -223,6 +229,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 mDButton.setEnabled(false);
                 mBButton.setEnabled(false);
             }
+        }
+        else if(view.getId() == R.id.cheat_button){
+            //TODO: launch cheat activity
+            Intent cheatIntent = CheatActivity.newIntent(this);
+            startActivity(cheatIntent);
+
         }
         if (mIndex > mQuestions.length-1 || mIndex < 0) {
             mIndex = 0;
