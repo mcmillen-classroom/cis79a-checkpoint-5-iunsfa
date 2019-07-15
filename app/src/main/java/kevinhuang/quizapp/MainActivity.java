@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
+    private static final int REQUEST_CODE_CHEAT = 0;
     private TextView mTextView;
     private TextView mScoreTextView;
     private EditText mEditText;
@@ -110,6 +111,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //setup the first question
         setupQuestion();
         mScoreTextView.setText("Score: " + mScore);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent resultData){
+        if(resultCode != RESULT_OK){
+            return;
+        }
+        if(requestCode == REQUEST_CODE_CHEAT && resultData != null){
+            mCheated = CheatActivity.didCheat(resultData);
+        }
     }
 
     @Override
@@ -232,8 +243,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(view.getId() == R.id.cheat_button){
             //TODO: launch cheat activity
-            Intent cheatIntent = CheatActivity.newIntent(this);
-            startActivity(cheatIntent);
+            Intent cheatIntent = CheatActivity.newIntent(this, mQuestions[mIndex]);
+            startActivityForResult(cheatIntent, REQUEST_CODE_CHEAT);
 
         }
         if (mIndex > mQuestions.length-1 || mIndex < 0) {

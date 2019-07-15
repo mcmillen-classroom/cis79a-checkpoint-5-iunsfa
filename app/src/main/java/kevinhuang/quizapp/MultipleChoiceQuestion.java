@@ -1,5 +1,7 @@
 package kevinhuang.quizapp;
 
+import android.content.Context;
+
 public class MultipleChoiceQuestion extends Question{
     private int mOptionsResIds;
     private int mAnswer; //index into the array of correct answers
@@ -21,4 +23,11 @@ public class MultipleChoiceQuestion extends Question{
     public boolean isMultipleChoiceQuestion(){
         return true;
     }
+
+    @Override
+    public String getAnswerText(Context ctx){
+        String[] options = ctx.getResources().getStringArray(mOptionsResIds);
+        return options[mAnswer];
+    }
+
 }
