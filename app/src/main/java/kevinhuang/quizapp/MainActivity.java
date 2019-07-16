@@ -291,7 +291,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
     public boolean checkAnswer(boolean userInput) {
-        if (mQuestions[mIndex].checkAnswer(userInput)) {
+        if(mCheated){
+            Toast.makeText(this,R.string.cheat_shame, Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else if (mQuestions[mIndex].checkAnswer(userInput)) {
             mFalseButton.setEnabled(false);
             mTrueButton.setEnabled(false);
             mScore++;
@@ -313,7 +317,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
         public boolean checkAnswer(String userInput){
-            if (mQuestions[mIndex].checkAnswer(userInput)) {
+            if(mCheated){
+                Toast.makeText(this,R.string.cheat_shame, Toast.LENGTH_LONG).show();
+                return false;
+            }
+            else if (mQuestions[mIndex].checkAnswer(userInput)) {
                 mFalseButton.setEnabled(false);
                 mTrueButton.setEnabled(false);
                 mScore++;

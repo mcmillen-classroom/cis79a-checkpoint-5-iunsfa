@@ -12,6 +12,8 @@ import android.widget.TextView;
 public class CheatActivity extends AppCompatActivity implements View.OnClickListener {
 
 
+    public static final String EXTRA_QUESTION_TEXT = "question_text";
+    public static final String EXTRA_ANSWER_TEXT = "answer_text";
     private TextView mQuestionTextView;
     private TextView mAnswerTextView;
     private Button mShowAnswerButton;
@@ -30,9 +32,9 @@ public class CheatActivity extends AppCompatActivity implements View.OnClickList
         mShowAnswerButton.setOnClickListener(this);
 
         Intent launchIntent = getIntent();
-        String questionText = launchIntent.getStringExtra("question_text");
+        String questionText = launchIntent.getStringExtra(EXTRA_QUESTION_TEXT);
         mQuestionTextView.setText(questionText);
-        mAnswerText = launchIntent.getStringExtra("answer_text");
+        mAnswerText = launchIntent.getStringExtra(EXTRA_ANSWER_TEXT);
 
     }
 
@@ -47,8 +49,8 @@ public class CheatActivity extends AppCompatActivity implements View.OnClickList
 
     public static Intent newIntent(Context ctx, Question question){
         Intent ret = new Intent(ctx, CheatActivity.class);
-        ret.putExtra("question_text", question.getText(ctx));
-        ret.putExtra("answer_text", question.getAnswerText(ctx));
+        ret.putExtra(EXTRA_QUESTION_TEXT, question.getText(ctx));
+        ret.putExtra(EXTRA_ANSWER_TEXT, question.getAnswerText(ctx));
         return ret;
     }
 
